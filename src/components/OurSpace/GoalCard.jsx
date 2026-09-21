@@ -38,7 +38,7 @@ const GoalCard = ({ goal, onProgressChange, onDelete, onUpdate }) => {
           <img src={goal.image_url} alt={goal.title} className="w-full h-full object-cover shadow-sm grayscale-[20%] sepia-[10%]" />
           <button 
             onClick={() => setIsEditingImg(true)}
-            className="absolute inset-0 bg-dark/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-paper font-serif text-[10px] tracking-widest uppercase"
+            className="absolute bottom-2 right-2 bg-dark/70 text-paper px-2 py-1 rounded text-[8px] md:inset-0 md:bg-dark/40 md:opacity-0 md:group-hover/img:opacity-100 md:flex md:items-center md:justify-center md:rounded-none transition-opacity font-serif text-[10px] tracking-widest uppercase"
           >
             edit photo
           </button>
@@ -46,7 +46,7 @@ const GoalCard = ({ goal, onProgressChange, onDelete, onUpdate }) => {
       ) : (
         <button 
           onClick={() => setIsEditingImg(true)}
-          className="opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-serif uppercase tracking-widest text-wine/50 hover:text-wine mb-2 flex items-center gap-1"
+          className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-[10px] font-serif uppercase tracking-widest text-wine/60 hover:text-wine mb-2 flex items-center gap-1"
         >
           <span>+</span> photo
         </button>
@@ -90,7 +90,7 @@ const GoalCard = ({ goal, onProgressChange, onDelete, onUpdate }) => {
 
       <button 
         onClick={() => onDelete(goal._id || goal.id)}
-        className="absolute top-0 right-0 md:-right-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs uppercase tracking-widest text-wine/40 hover:text-burgundy font-serif"
+        className="absolute top-0 right-0 md:-right-8 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-xs uppercase tracking-widest text-wine/50 hover:text-burgundy font-serif p-1"
       >
         remove
       </button>

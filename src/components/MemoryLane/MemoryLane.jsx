@@ -130,7 +130,7 @@ const MemoryLane = () => {
                   />
                   {/* Edit / Delete controls — admin only, appear on hover */}
                   {isAdmin && (
-                    <div className="absolute top-2 right-0 md:right-4 z-20 flex gap-3 opacity-0 group-hover/row:opacity-100 transition-opacity duration-300">
+                    <div className="absolute top-2 right-0 md:right-4 z-20 flex gap-3 opacity-100 md:opacity-0 md:group-hover/row:opacity-100 transition-opacity duration-300">
                       <button
                         onClick={(e) => { e.stopPropagation(); handleEdit(milestone); }}
                         className="font-serif text-[8px] tracking-widest uppercase text-dark/30 hover:text-wine transition-colors"

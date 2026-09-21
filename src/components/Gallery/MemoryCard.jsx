@@ -46,11 +46,11 @@ const MemoryCard = ({ memory, index = 0, onClick, onDelete }) => {
         </div>
       </div>
 
-      {/* Delete button — admin only, appears on hover */}
+      {/* Delete button — admin only */}
       {onDelete && (
         <button
           onClick={handleDelete}
-          className="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity font-serif text-[8px] tracking-widest uppercase text-dark/30 hover:text-wine bg-paper/80 px-2 py-1 z-10"
+          className="absolute top-0 left-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity font-serif text-[8px] tracking-widest uppercase text-dark/40 hover:text-wine bg-paper/90 px-2 py-1 z-10 rounded-br shadow-xs"
         >
           remove
         </button>

@@ -41,7 +41,7 @@ export default function NoteCard({ note, onDelete }) {
       {canDelete && (
         <button
           onClick={handleDelete}
-          className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity font-serif text-[9px] tracking-widest hover:text-wine transition-colors"
+          className="absolute top-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity font-serif text-[9px] tracking-widest hover:text-wine transition-colors p-1"
           style={{ color: 'var(--color-dim)' }}
         >
           remove

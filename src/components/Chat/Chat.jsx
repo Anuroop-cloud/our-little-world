@@ -25,7 +25,7 @@ function ChatMessage({ msg, currentUser, isAdmin, onDelete }) {
       </p>
       <div className="group flex items-end gap-2">
         {canDelete && !isOwn && (
-          <button onClick={() => onDelete(msg._id)} className="opacity-0 group-hover:opacity-100 transition-opacity font-serif text-[8px] text-dark/25 hover:text-wine/50">
+          <button onClick={() => onDelete(msg._id)} className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity font-serif text-[8px] text-dark/35 hover:text-wine/60 p-1">
             ✕
           </button>
         )}
@@ -40,7 +40,7 @@ function ChatMessage({ msg, currentUser, isAdmin, onDelete }) {
           {msg.edited && <p className="font-serif text-[8px] text-dark/25 mt-1">edited</p>}
         </div>
         {canDelete && isOwn && (
-          <button onClick={() => onDelete(msg._id)} className="opacity-0 group-hover:opacity-100 transition-opacity font-serif text-[8px] text-dark/25 hover:text-wine/50">
+          <button onClick={() => onDelete(msg._id)} className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity font-serif text-[8px] text-dark/35 hover:text-wine/60 p-1">
             ✕
           </button>
         )}

@@ -41,7 +41,7 @@ const TodoItem = ({ item, onToggle, onDelete }) => {
 
       <button 
         onClick={() => onDelete(item._id || item.id)}
-        className="opacity-0 group-hover:opacity-100 transition-opacity text-xs uppercase tracking-widest text-wine/40 hover:text-burgundy font-serif"
+        className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-xs uppercase tracking-widest text-wine/50 hover:text-burgundy font-serif p-1"
       >
         remove
       </button>
