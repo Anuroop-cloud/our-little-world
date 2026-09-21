@@ -34,7 +34,7 @@ async def seed():
                 "username": "pooja",
                 "display_name": "Pooja",
                 "hashed_password": pooja_hash,
-                "role": "user",
+                "role": "admin",
                 "created_at": datetime.utcnow(),
             },
         ])
