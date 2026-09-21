@@ -13,7 +13,6 @@ const MemoryLane = () => {
   const [expandedMilestoneId, setExpandedMilestoneId] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
   const [editTarget, setEditTarget] = useState(null); // milestone to edit
-  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => { fetchMilestones(); }, []);
 
@@ -58,24 +57,13 @@ const MemoryLane = () => {
     setFormOpen(true);
   };
 
-  const handleHeaderTap = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
-    <div 
-      className="w-full relative pt-8 pb-32 px-6 md:px-12 transition-all duration-700"
-      onMouseEnter={() => { if (window.matchMedia('(hover: hover)').matches) setIsExpanded(true); }}
-      onMouseLeave={() => { if (window.matchMedia('(hover: hover)').matches) setIsExpanded(false); }}
-    >
+    <div className="w-full relative pt-8 pb-32 px-6 md:px-12">
       {/* Decorative Border */}
       <div className="fixed inset-4 md:inset-8 border border-burgundy/15 pointer-events-none z-0" />
 
       {/* Header */}
-      <div 
-        className="w-full max-w-4xl mx-auto text-center mb-12 relative z-10 pt-8 cursor-pointer group"
-        onClick={handleHeaderTap}
-      >
+      <div className="w-full max-w-4xl mx-auto text-center mb-12 relative z-10 pt-8">
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           className="font-display text-[8px] tracking-[0.5em] uppercase text-dark/25 mb-4"
@@ -85,23 +73,16 @@ const MemoryLane = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="font-script text-6xl md:text-7xl text-wine mb-4 group-hover:text-burgundy transition-colors"
+          className="font-script text-6xl md:text-7xl text-wine mb-4"
         >
           Memory Lane
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif italic text-dark/50 text-base flex flex-col items-center justify-center gap-4"
+          className="font-serif italic text-dark/50 text-base"
         >
-          <span>&ldquo;how we became us&rdquo;</span>
-          <motion.span 
-            animate={{ rotate: isExpanded ? 180 : 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="text-wine/40 text-xl block mt-2"
-          >
-            ⌄
-          </motion.span>
+          &ldquo;how we became us&rdquo;
         </motion.p>
 
         {/* + add milestone — admin only */}
@@ -109,23 +90,17 @@ const MemoryLane = () => {
           <motion.button
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            onClick={(e) => { e.stopPropagation(); openAdd(); }}
-            className="mt-6 font-serif text-[10px] tracking-[0.3em] uppercase text-wine/50 hover:text-wine transition-colors"
+            onClick={openAdd}
+            className="mt-6 font-serif text-[10px] tracking-[0.3em] uppercase text-wine/50 hover:text-wine transition-colors block mx-auto"
           >
             + add milestone
           </motion.button>
         )}
       </div>
 
-      {/* Expandable Timeline Section */}
-      <motion.div
-        initial={false}
-        animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="overflow-hidden"
-      >
-        <div className="relative w-full max-w-5xl mx-auto z-10 pt-8">
-          {/* Vertical line */}
+      {/* Timeline Section */}
+      <div className="relative w-full max-w-5xl mx-auto z-10 pt-8">
+        {/* Vertical line */}
         <div className="absolute top-0 bottom-0 left-8 md:left-24 w-[1px] bg-gradient-to-b from-transparent via-wine/20 to-transparent" />
 
         {loading ? (
@@ -193,10 +168,7 @@ const MemoryLane = () => {
             <span className="font-script text-3xl text-wine/30">to be continued...</span>
           </div>
         )}
-        </div>
-      </motion.div>
-
-
+      </div>
 
       <MilestoneForm
         isOpen={formOpen}
