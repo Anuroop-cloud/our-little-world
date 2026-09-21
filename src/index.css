@@ -1,111 +1,118 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+@theme {
+  --color-wine: #561C24;
+  --color-burgundy: #6D2932;
+  --color-taupe: #C7B7A3;
+  --color-cream: #E8D8C4;
+  --color-paper: #F8F6F2;
+  --color-dark: #2B2020;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Readable secondary tones — darkened for better visibility */
+  --color-muted: #4A3636;    /* secondary body copy */
+  --color-dim: #604A4A;      /* tertiary metadata */
+  --color-ghost: #7A5B5B;    /* decorative-only text */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Playfair Display", serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-dark);
+    font-family: var(--font-serif);
+    /* subtle paper texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-taupe) 30%, transparent);
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--color-dark);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+@layer utilities {
+
+  /* --- Global Text Size Bumps --- */
+  .text-\[8px\] { font-size: 10px !important; }
+  .text-\[9px\] { font-size: 11px !important; }
+  .text-\[10px\] { font-size: 12px !important; }
+  .text-xs { font-size: 14px !important; line-height: 1.5 !important; }
+  .text-sm { font-size: 16px !important; line-height: 1.5 !important; }
+  .text-base { font-size: 18px !important; line-height: 1.5 !important; }
+  .text-lg { font-size: 20px !important; }
+  .text-xl { font-size: 22px !important; }
+
+  /* Section eyebrow / label text */
+  .text-label {
+    color: var(--color-ghost);
+    letter-spacing: 0.45em;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  /* Secondary body copy */
+  .text-secondary {
+    color: var(--color-muted);
   }
-}
 
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+  /* Tertiary metadata */
+  .text-meta {
+    color: var(--color-dim);
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+
+  /* Empty state */
+  .text-empty {
+    color: var(--color-dim);
+    font-style: italic;
   }
-}
-p {
-  margin: 0;
-}
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+  /* Nav links */
+  .text-nav {
+    color: var(--color-muted);
+  }
+  .text-nav:hover {
+    color: var(--color-wine);
+  }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  /* text-dark overrides */
+  .text-dark\/20, .text-dark\/25 { color: var(--color-ghost) !important; }
+  .text-dark\/30                 { color: var(--color-dim)   !important; }
+  .text-dark\/35                 { color: var(--color-muted) !important; }
+  .text-dark\/40                 { color: var(--color-muted) !important; }
+
+  .text-dark\/50                 { color: color-mix(in srgb, var(--color-dark) 65%, var(--color-paper)); }
+  .text-dark\/60                 { color: color-mix(in srgb, var(--color-dark) 75%, var(--color-paper)); }
+  .text-dark\/70                 { color: color-mix(in srgb, var(--color-dark) 82%, var(--color-paper)); }
+  .text-dark\/80                 { color: color-mix(in srgb, var(--color-dark) 90%, var(--color-paper)); }
+
+  /* text-wine at very low opacity — bump to readable wine tones */
+  .text-wine\/20, .text-wine\/30 { color: color-mix(in srgb, var(--color-wine) 55%, var(--color-paper)); }
+  .text-wine\/40                 { color: color-mix(in srgb, var(--color-wine) 65%, var(--color-paper)); }
+  .text-wine\/50                 { color: color-mix(in srgb, var(--color-wine) 75%, var(--color-paper)); }
+  .text-wine\/60                 { color: color-mix(in srgb, var(--color-wine) 85%, var(--color-paper)); }
+
+  /* ─── Header nav specific ───────────────────────────────────────────────── */
+  .header-nav-link {
+    color: var(--color-muted);
+    transition: color 0.2s;
+  }
+  .header-nav-link:hover,
+  .header-nav-link.active {
+    color: var(--color-wine);
+  }
+
+  /* ─── Placeholder text — make inputs usable ─────────────────────────────── */
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-ghost);
+  }
+
+  /* ─── Border helpers — keep decorative borders soft ─────────────────────── */
+  .border-decorative {
+    border-color: color-mix(in srgb, var(--color-taupe) 40%, transparent);
+  }
 }

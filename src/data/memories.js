@@ -1,0 +1,122 @@
+export const memories = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop",
+    title: "my favorite smile",
+    caption: "one of my favorite versions of you",
+    date: "12 · 09 · 2025",
+    location: "Vellore",
+    category: "PEOPLE",
+    monochrome: false,
+    rotation: -2,
+    aspect: "aspect-[3/4]"
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop",
+    title: "morning coffee",
+    caption: "the best start to any day",
+    date: "15 · 09 · 2025",
+    location: "Our Spot",
+    category: "LITTLE THINGS",
+    monochrome: true,
+    rotation: 1,
+    aspect: "aspect-square"
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop",
+    title: "the getaway",
+    caption: "away from everything, just us",
+    date: "02 · 10 · 2025",
+    location: "The Hills",
+    category: "PLACES",
+    monochrome: false,
+    rotation: -1,
+    aspect: "aspect-[4/3]"
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=800&auto=format&fit=crop",
+    title: "golden hour",
+    caption: "you looked so pretty here",
+    date: "14 · 11 · 2025",
+    location: "The Park",
+    category: "FAVORITES",
+    monochrome: false,
+    rotation: 3,
+    aspect: "aspect-[3/4]"
+  },
+  {
+    id: 5,
+    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop",
+    title: "polaroid moments",
+    caption: "I carry this one in my wallet",
+    date: "25 · 12 · 2025",
+    location: "Home",
+    category: "LITTLE THINGS",
+    monochrome: true,
+    rotation: -3,
+    aspect: "aspect-[3/4]"
+  },
+  {
+    id: 6,
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
+    title: "city lights",
+    caption: "walking around nowhere in particular",
+    date: "14 · 02 · 2026",
+    location: "Downtown",
+    category: "PLACES",
+    monochrome: false,
+    rotation: 2,
+    aspect: "aspect-square"
+  },
+  {
+    id: 7,
+    image: "https://images.unsplash.com/photo-1482189349482-3defd547e0e9?q=80&w=800&auto=format&fit=crop",
+    title: "that one dinner",
+    caption: "we laughed so hard we cried",
+    date: "05 · 04 · 2026",
+    location: "Italian Place",
+    category: "PEOPLE",
+    monochrome: false,
+    rotation: -1,
+    aspect: "aspect-[4/3]"
+  },
+  {
+    id: 8,
+    image: "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?q=80&w=800&auto=format&fit=crop",
+    title: "just a quiet day",
+    caption: "these are the days I love most",
+    date: "12 · 05 · 2026",
+    location: "The Apartment",
+    category: "FAVORITES",
+    monochrome: false,
+    rotation: 1,
+    aspect: "aspect-[3/4]"
+  },
+  {
+    id: 9,
+    image: "https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?q=80&w=800&auto=format&fit=crop",
+    title: "flowers you bought",
+    caption: "they matched your dress",
+    date: "28 · 06 · 2026",
+    location: "Balcony",
+    category: "LITTLE THINGS",
+    monochrome: false,
+    rotation: -2,
+    aspect: "aspect-square"
+  },
+  {
+    id: 10,
+    image: "https://images.unsplash.com/photo-1475855581690-80cb648b2098?q=80&w=800&auto=format&fit=crop",
+    title: "weekend roadtrip",
+    caption: "the playlist was perfect",
+    date: "15 · 08 · 2026",
+    location: "Highway 1",
+    category: "PLACES",
+    monochrome: true,
+    rotation: 2,
+    aspect: "aspect-[4/3]"
+  }
+];

@@ -1,0 +1,52 @@
+export const milestones = [
+  {
+    id: 1,
+    date: "24 · 08 · 2025",
+    title: "Where it all began",
+    description: "Somewhere between two people and a conversation, something quietly started.",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop", // placeholder romantic photo
+    location: "The Coffee Shop",
+    caption: "the beginning of us",
+    monochrome: true,
+  },
+  {
+    id: 2,
+    date: "12 · 09 · 2025",
+    title: "Our first date",
+    description: "The beginning of all the memories we didn't know we were going to make.",
+    image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop", // placeholder
+    location: "Downtown",
+    caption: "nervous but happy",
+    monochrome: false,
+  },
+  {
+    id: 3,
+    date: "14 · 02 · 2026",
+    title: "A day worth remembering",
+    description: "One of those ordinary days that somehow became extraordinary.",
+    image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=800&auto=format&fit=crop",
+    location: "By the river",
+    caption: "sunsets with you",
+    monochrome: true,
+  },
+  {
+    id: 4,
+    date: "08 · 06 · 2026",
+    title: "Another little chapter",
+    description: "More laughs. More memories. More us.",
+    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop",
+    location: "Summer trip",
+    caption: "just us",
+    monochrome: false,
+  },
+  {
+    id: 5,
+    date: "24 · 09 · 2026",
+    title: "Today",
+    description: "Your birthday. And somehow, this is still only the beginning.",
+    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop",
+    location: "Here and now",
+    caption: "happy birthday",
+    monochrome: false,
+  },
+];
